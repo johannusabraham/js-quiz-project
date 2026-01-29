@@ -31,3 +31,9 @@ console.log("juiste antwoorden:", juiste_antwoorden);
 console.log("huidige vraag:", huidige_vraag);
 console.log("Score:", score);
 
+function toonVraag() {
+    const vraagElement = document.getElementById("vraag");
+    vraagElement.textContent = aantal_vragen[huidige_vraag];
+}
+
+toonVraag();
