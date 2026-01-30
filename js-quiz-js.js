@@ -2,8 +2,8 @@ const aantal_vragen = [
     "Ben ik een mens?",
     "Wat is de hoofdstad van Nederland?",
     "Hoeveel dagen heeft een week?",
-    "hoelang duurt een dag?",
-    "hoeveel weken heeft een maand?"
+    "Hoelang duurt een dag?",
+    "Hoeveel weken heeft een maand?"
 ];
 
 const keuzes = [
@@ -14,21 +14,10 @@ const keuzes = [
     ["4 weken", "3 weken", "5 weken"]
 ];
 
-const juiste_antwoorden = [
-    0,
-    0,
-    1,
-    1,
-    0
-];
+const juiste_antwoorden = [0, 0, 1, 1, 0];
 
 let huidige_vraag = 0;
 let score = 0;
-    console.log("Vragen:", aantal_vragen);
-    console.log("Keuzes:", keuzes);
-    console.log("Juiste antwoorden:", juiste_antwoorden);
-    console.log("Huidige vraag:", huidige_vraag);
-    console.log("Score:", score);
 
 function toonVraag() {
     document.getElementById("vraag").textContent = aantal_vragen[huidige_vraag];
