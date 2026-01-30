@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        #antwoorden button {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        #volgende {
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+        #feedback {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-    <p id="vraag"></p>
-    <button onclick="ja_nee()">ja</button> 
-    <button onclick="ja_nee()">nee</button> 
-    <div id="resultaat"></div>
-    <div id="score"></div>
-    <button onclick="v_vraag()">volgende vraag</button>
-    <script src="js-quiz-js.js"></script>
-</body>
+
+    <h1>Mijn Quiz</h1>
+
+    <div id="vraag"></div>
+
+    <div id="antwoorden"></div>
+
+    <div id="feedback"></div>
+
+    <div id="score">Score: 0</div>
+
+    <button id="volgende">Volgende vraag</button>

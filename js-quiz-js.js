@@ -15,8 +15,8 @@ const keuzes = [
 ];
 
 const juiste_antwoorden = [
-    0, 
-    0, 
+    0,
+    0,
     1,
     1,
     0
@@ -24,16 +24,49 @@ const juiste_antwoorden = [
 
 let huidige_vraag = 0;
 let score = 0;
-
-console.log("vragen:", aantal_vragen);
-console.log("keuzes:", keuzes);
-console.log("juiste antwoorden:", juiste_antwoorden);
-console.log("huidige vraag:", huidige_vraag);
-console.log("Score:", score);
+    console.log("Vragen:", aantal_vragen);
+    console.log("Keuzes:", keuzes);
+    console.log("Juiste antwoorden:", juiste_antwoorden);
+    console.log("Huidige vraag:", huidige_vraag);
+    console.log("Score:", score);
 
 function toonVraag() {
-    const vraagElement = document.getElementById("vraag");
-    vraagElement.textContent = aantal_vragen[huidige_vraag];
+    document.getElementById("vraag").textContent = aantal_vragen[huidige_vraag];
+
+    const antwoordenDiv = document.getElementById("antwoorden");
+    antwoordenDiv.innerHTML = "";
+
+    keuzes[huidige_vraag].forEach((keuze, index) => {
+        const knop = document.createElement("button");
+        knop.textContent = keuze;
+        knop.onclick = () => controleerAntwoord(index);
+        antwoordenDiv.appendChild(knop);
+    });
+
+    document.getElementById("feedback").textContent = "";
 }
+
+function controleerAntwoord(gekozenIndex) {
+    if (gekozenIndex === juiste_antwoorden[huidige_vraag]) {
+        score++;
+        document.getElementById("feedback").textContent = "Goed!";
+    } else {
+        document.getElementById("feedback").textContent = "Fout!";
+    }
+
+    document.getElementById("score").textContent = "Score: " + score;
+}
+
+document.getElementById("volgende").onclick = () => {
+    huidige_vraag++;
+    if (huidige_vraag < aantal_vragen.length) {
+        toonVraag();
+    } else {
+        document.getElementById("vraag").textContent = "Quiz voltooid!";
+        document.getElementById("antwoorden").innerHTML = "";
+        document.getElementById("feedback").textContent = "";
+        document.getElementById("volgende").style.display = "none";
+    }
+};
 
 toonVraag();
