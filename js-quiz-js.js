@@ -31,19 +31,6 @@ function toonvraag() {
         button.onclick = () => is_antwoord_goed(index);
         antwoorden_mogelijk.appendChild(button)
  });
-
- document.getElementById("feedback").textContent = "";
-}
-
-function is_antwoord_goed(index_2) {
-    if (index_2 === juiste_antwoorden[huidige_vraag]) {
-        score++;
-        document.getElementById("feedback").textContent = "goed gedaan, dit is het juiste antwoord."
-    } else {
-        document.getElementById("feedback").textContent = "dit is niet het juiste antwoord."
-    }
-
-    document.getElementById("score").textContent = "score: " + score;
 }
 
 document.getElementById("volgende").onclick = () => {
