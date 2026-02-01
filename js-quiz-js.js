@@ -22,6 +22,8 @@ let score = 0;
 function toonvraag() {
     document.getElementById("vraag").textContent = aantal_vragen[huidige_vraag];
 
+    updateVoortgang();
+
     const antwoorden_mogelijk = document.getElementById("antwoorden");
     antwoorden_mogelijk.innerHTML = "";
 
@@ -70,6 +72,11 @@ function resetQuiz() {
     document.getElementById("volgende").style.display = "inline-block";
 
     toonvraag();
+}
+
+function updateVoortgang() {
+    document.getElementById("einde").textContent =
+        "Vraag " + (huidige_vraag + 1) + " van " + aantal_vragen.length;
 }
 
 toonvraag();
