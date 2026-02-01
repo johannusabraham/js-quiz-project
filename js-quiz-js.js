@@ -75,7 +75,7 @@ function resetQuiz() {
 }
 
 function updateVoortgang() {
-    document.getElementById("einde").textContent =
+    document.getElementById("vraag_aantal").textContent =
         "Vraag " + (huidige_vraag + 1) + " van " + aantal_vragen.length;
 }
 
