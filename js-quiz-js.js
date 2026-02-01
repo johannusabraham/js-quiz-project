@@ -59,4 +59,17 @@ document.getElementById("volgende").onclick = () => {
     }
 };
 
+document.getElementById("opnieuw").onclick = resetQuiz;
+
+function resetQuiz() {
+    huidige_vraag = 0;
+    score = 0;
+
+    document.getElementById("score").textContent = "score: 0";
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("volgende").style.display = "inline-block";
+
+    toonvraag();
+}
+
 toonvraag();
